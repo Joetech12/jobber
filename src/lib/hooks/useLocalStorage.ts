@@ -9,5 +9,5 @@ export default function useLocalStorage<T>(key: string, initialValue: T): [T, Re
     localStorage.setItem(key, JSON.stringify(value));
   }, [value, key]);
 
-  return [value, setValue] as const;
+  return [value, setValue];
 }

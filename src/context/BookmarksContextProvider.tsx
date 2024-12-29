@@ -6,7 +6,7 @@ import { JobItemFull } from "../lib/types";
 type BookmarksContext = {
   bookmarkedIds: number[];
   handleToggleBookmark: (id: number) => void;
-  bookmarkedJobItems: JobItemFull[];
+  bookmarkedJobItems: JobItemFull[] | undefined;
   isLoading: boolean;
 };
 
@@ -36,8 +36,8 @@ export default function BookmarksContextProvider({
   return (
     <BookmarksContext.Provider
       value={{
-        bookmarkedIds,
-        bookmarkedJobItems,
+        bookmarkedIds: bookmarkedIds ?? [],
+        bookmarkedJobItems: bookmarkedJobItems ?? [],
         isLoading,
         handleToggleBookmark,
       }}

@@ -5,7 +5,7 @@ import { handleError } from "../utils";
 
 type JobItemApiResponse = {
   public: boolean;
-  jobItem: JobItemFull;
+  jobItem: JobItemFull | undefined;
 };
 
 const fetchJobItem = async (id: number): Promise<JobItemApiResponse> => {

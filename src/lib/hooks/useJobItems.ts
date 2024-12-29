@@ -39,5 +39,5 @@ export default function useJobItems(ids: number[]) {
 
   const isLoading = results.some((result) => result.isLoading);
 
-  return { jobItems, isLoading };
+  return { jobItems: jobItems as JobItemFull[], isLoading };
 }
